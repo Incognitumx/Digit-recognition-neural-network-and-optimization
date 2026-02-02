@@ -47,12 +47,22 @@ In our MNIST project, "Weights" represent how much the network cares about a spe
   like a hidden flanker or a specific trap.
   
   Basically, there are two main categories of activation function:
-  - **ReLU** (Rectified Linear Unit):
+  - **ReLU** (Rectified Linear Unit) - The Ping threshold:
     </br>
     ReLU is the most popular activation function in modern AI. Its logic is simple: $f(x) = \max(0, x)$.
-    How it works: If the "evidence" for a pattern is 0 or negative, the neuron output is 0 (it stays silent). If the evidence is positive, it passes the value as-is.
+    </br>
+    - How it works: If the "evidence" for a pattern is 0 or negative, the neuron output is 0 (it stays silent). If the evidence is positive, it passes the value as-is.
 
-    In Valorant terms: This is like having a confidence threshold. If you are only 10% sure you heard a footstep, you say nothing. But if your confidence is above the "zero line," you report it. The more certain you are, the louder/faster you report it.
+    - In Valorant terms: This is like having a confidence threshold. If you are only 10% sure you heard a footstep, you say nothing. But if your confidence is above the "zero line," you report it. The more certain you are, the louder/faster you report it.
 
-    Why use it? It is computationally very fast and helps the network focus on only the most important features, effectively "turning off" neurons that don't find anything useful.
+    - Why use it? It is computationally very fast and helps the network focus on only the most important features, effectively "turning off" neurons that don't find anything useful.
+  - **Sigmoid** - Final decision probability:
+    </br>
+    Sigmoid squashes any input value into a range between 0 and 1.
+    </br>
+    - How it works: It turns raw scores into a percentage (probability).
+
+    - In Valorant terms: Think of this as the final summary at the end of a round. Instead of raw data, it gives a probability: "There is a 95% chance the enemy is           saving this round."
+
+    - Why use it?: While ReLU is used in the hidden layers (to process information), Sigmoid is often used in the output layer for binary classification (Yes/No questions).
  
