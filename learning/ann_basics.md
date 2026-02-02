@@ -65,4 +65,34 @@ In our MNIST project, "Weights" represent how much the network cares about a spe
     - In Valorant terms: Think of this as the final summary at the end of a round. Instead of raw data, it gives a probability: "There is a 95% chance the enemy is           saving this round."
 
     - Why use it?: While ReLU is used in the hidden layers (to process information), Sigmoid is often used in the output layer for binary classification (Yes/No questions).
+   
+  iv. **Loss Function**:
+  </br>
+  After a match in **Valorant** or **Ape**x, you check the "_**Match Summary**_". It tells you your K/D ratio, how many shots you missed, and how far your crosshair was from the enemy's head.
+  - **Definition**:
+    </br>
+    The **Loss Function** calculates the "distance" between the model's guess and the actual truth.
+  - **Analogy**:
+    </br>
+    - If the image is a "7" and the model says it's a "1", the Loss is small (because 7 and 1 look similar).
+    - If the model says it's a "0", the Loss is huge!
+  - **Goal**:
+    </br>
+    In training, our only goal is to make this Loss as close to 0 as possible, just like you want your "missed shots" count to be zero.
+
+v. **Optimizer: The "Aim Lab"**
+</br>
+If the Loss Function tells us *how much* we missed, the **Optimizer** (e.g., **Adam**) tells us *how to fix* our aim.
+
+- **Backpropagation**: This is like reviewing your death recap. It traces the error back through the layers to find which weights need to be adjusted.
+- **Learning Rate**: This is the "step size" of our improvement. 
+    - Too high: You "over-flick" and miss the target.
+    - Too low: You improve too slowly to win the game.
+
+vi.** My Observations (Initial Training)**:
+</br>
+I ran the `train.py` script and observed:
+- Starting Loss: ~2.30 (Random guessing).
+- Final Loss after 1 epoch: [Insert your result here, e.g., 0.25].
+- The training felt like the model was "practicing its aim" on the MNIST dataset!
  
