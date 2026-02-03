@@ -12,6 +12,10 @@ def train():
     ])
     
     # Automatically download MNIST dataset to the data folder
+    # Fix for MNIST download error
+    new_mirror = 'https://ossci-datasets.s3.amazonaws.com/mnist/'
+    datasets.MNIST.mirrors = [new_mirror]
+
     train_dataset = datasets.MNIST('../data', train=True, download=True, transform=transform)
     train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
 
