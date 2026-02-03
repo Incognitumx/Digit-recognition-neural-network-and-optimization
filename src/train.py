@@ -51,8 +51,11 @@ def train():
             print(f'Batch {batch_idx}: Loss = {loss.item():.4f}')
 
     # Save the trained model weights
-    torch.save(model.state_dict(), "../models/mnist_ann.pth")
-    print("Training complete! Model saved in models/mnist_ann.pth")
+    import os
+    # Create directory if it doesn't exist
+    os.makedirs("models", exist_ok=True) 
+    # Save directly to the models folder in the current working directory
+    torch.save(model.state_dict(), "models/mnist_ann.pth")
 
 if __name__ == '__main__':
     train()
